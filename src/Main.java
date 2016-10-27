@@ -8,7 +8,6 @@ public class Main {
         boolean continueToAskUserInput = false;
 
         System.out.println("Enter a number:");
-
         while(!continueToAskUserInput){
             String number = reader.next();
             number = deletePlus( number);
@@ -17,25 +16,23 @@ public class Main {
                 continueToAskUserInput = true;
             }
         }
-
     }
 
     private static boolean checkLength(String s) {
         if(s.length()>9 && s.length() < 15){
             System.out.println("Length is correct");
             return true;
-        }else{
-            System.out.println("Length is not correct");
-            return false;
         }
+        System.out.println("Length is not correct");
+        return false;
+
     }
 
     private  static String deletePlus(String s){
         if (s.startsWith("+")){
             return s.substring(1,s.length());
-        }else{
-            return s;
         }
+        return s;
     }
     private static boolean checkOperatorCode(String s){
         String [] operatorCodes = new String[]{"050","063","066","067","068","093","095","096","097","098"};
@@ -68,7 +65,6 @@ public class Main {
         }
         System.out.println("It`s not a number: " + s);
         return false;
-
     }
 
     private static boolean validateNumber(String s){
@@ -113,5 +109,4 @@ public class Main {
                 break;
         }
     }
-
 }
